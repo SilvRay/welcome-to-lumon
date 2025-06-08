@@ -215,6 +215,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   let sections = gsap.utils.toArray("[section]");
 
   let panels = gsap.utils.toArray(".severed-story_wrapper .panel");
+  let panel4 = document.querySelector(".severed-story_panel4");
+  let panel4Rect = panel4.getBoundingClientRect();
 
   gsap.to(panels, {
     xPercent: -100 * (panels.length - 1),
@@ -225,6 +227,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
       end: "+=" + innerWidth * (panels.length - 1),
       pin: true,
       scrub: 1,
+    },
+  });
+
+  gsap.to(".severed-story_wrapper-speech", {
+    height: "672",
+    scrollTrigger: {
+      trigger: ".severed-story_wrapper",
+      start: "bottom 95%",
+      end: "bottom 80%",
+      scrub: 0.2,
+      toggleActions: "restart pause reverse pause",
     },
   });
 
@@ -335,7 +348,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     window.addEventListener("resize", (event) => {
       if (windowWidth !== window.innerWidth) {
         windowWidth = window.innerWidth;
-        tl.kill();
+        anthemTl.kill();
         textElement.textContent = originalText;
         splitText();
       }
