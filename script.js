@@ -232,12 +232,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   gsap.to(".severed-story_wrapper-speech", {
     height: "672",
+    duration: 1,
     scrollTrigger: {
       trigger: ".severed-story_wrapper",
       start: "bottom 95%",
       end: "bottom 80%",
-      scrub: 0.2,
-      toggleActions: "restart pause reverse pause",
+      toggleActions: "play complete none none",
     },
   });
 
