@@ -231,7 +231,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   gsap.to(".severed-story_wrapper-speech", {
-    height: "672",
+    height: "110%",
     duration: 1,
     scrollTrigger: {
       trigger: ".severed-story_wrapper",
